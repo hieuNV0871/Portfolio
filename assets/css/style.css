@@ -102,6 +102,27 @@ html {
 
 .inner {
     margin-left: 35rem;
+    margin-right: 5rem;
+}
+
+.title {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 70%;
+    border-bottom: 3px solid var(--primary);
 }
 
 .home {
@@ -173,5 +194,131 @@ html {
     width: 30rem;
     height: 40rem;
     object-fit: cover;
-    border-radius: .5rem;
+    border-radius: .7rem;
+    box-shadow: 
+                rgba(146, 194, 231, 0.4) 5px 5px, 
+                rgba(146, 194, 231, 0.3) 10px 10px, 
+                rgba(146, 194, 231, 0.2) 15px 15px, 
+                rgba(146, 194, 231, 0.1) 20px 20px, 
+                rgba(146, 194, 231, 0.05) 25px 25px;
+}
+
+.about .about-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 15px;
+}
+
+.about-wrapper .about-item {
+    width: calc(33.33% - 30px);
+    max-height: 400px;
+    overflow: hidden;
+}
+
+.about-item .about-image {
+    width: 100%;
+    height: 20rem;
+    border-radius: 2rem;
+    padding: 1rem;
+    
+}
+
+.about-item .about-title {
+    font-size: 2.5rem;
+    color: var(--black);
+    padding: 1rem 2rem;
+}
+
+.about-item .about-desc {
+    font-size: 1.4rem;
+    color: var(--text);
+    padding: 1rem 2rem;
+}
+
+.skill-wrapper {
+    display: flex;
+
+}
+
+.skill-component {
+    flex: 1 0 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skill-timeline {
+    flex: 1 0 50%;
+}
+.skill-component-inner {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: calc(33.33% - 30px);
+    margin: 1rem 0;
+}
+
+.skill-component-inner > span {
+    font-size: 1.5rem;
+    color: var(--text);
+}   
+
+.skill-component-inner .skill-image {
+    width: 8rem;
+    height: 8rem;
+    border-radius: 99999px;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 
+    0 1px 3px rgb(0 0 0 / 20%);
+}
+.skill-image > img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+}
+
+.skill-timeline .skill-timeline-item {
+    display: flex;
+    margin: 2rem 0;
+}
+
+.skill-timeline-item .time {
+    position: relative;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--black);
+}
+
+.skill-timeline-item .time::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+    border-left: .4rem solid var(--primary);
+}
+
+.skill-timeline .detail {
+    flex: 1;
+    padding: 0 2rem;
+}
+.detail .detail-item > h2 {
+    font-size: 2.5rem;
+    color: var(--text);
+    font-weight: 600;
+}
+
+.detail .detail-item > p {
+    font-size: 1.5rem;
+    color: var(--text);
 }

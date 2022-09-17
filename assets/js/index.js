@@ -18,7 +18,6 @@ const app = {
             const index = Math.floor(Math.random() * backgroundColors.length)
 
             wrapper.style.backgroundColor = backgroundColors[index]
-            header.style.backgroundColor = backgroundColors[index]
 
             
         }, 4000)
