@@ -108,6 +108,7 @@ html {
 .title {
     position: relative;
     display: inline-block;
+    margin-bottom: 10rem;
     left: 50%;
     transform: translateX(-50%);
     font-size: 3rem;
@@ -131,6 +132,7 @@ html {
     align-items: center;
     min-height: 100vh;
     gap: .5rem;
+    margin-bottom: 5rem;
 }
 
 .home .introduct {
@@ -154,7 +156,7 @@ html {
     display: flex;
 }
 
-.btn-wrapper .btn {
+.btn-wrapper .btn, .btn {
     background-color: var(--primary);
     min-width: 10rem;
     color: var(--black);
@@ -166,7 +168,7 @@ html {
     0 1px 3px rgb(0 0 0 / 20%);
 }
 
-.btn-wrapper .btn:hover {
+.btn-wrapper .btn:hover ,.btn:hover {
     background-color: #b1d0e7;
     color: var(--black);
     transform: scale(1.1);
@@ -203,11 +205,15 @@ html {
                 rgba(146, 194, 231, 0.05) 25px 25px;
 }
 
+.about {
+    margin-bottom: 15rem;
+}
+
 .about .about-wrapper {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin: 0 15px;
+    margin: 0 1.5rem;
 }
 
 .about-wrapper .about-item {
@@ -234,6 +240,10 @@ html {
     font-size: 1.4rem;
     color: var(--text);
     padding: 1rem 2rem;
+}
+
+.skills {
+    margin-bottom: 15rem;
 }
 
 .skill-wrapper {
@@ -278,7 +288,6 @@ html {
 .skill-image > img {
     width: 4rem;
     height: 4rem;
-    object-fit: cover;
 }
 
 .skill-timeline .skill-timeline-item {
@@ -322,3 +331,65 @@ html {
     font-size: 1.5rem;
     color: var(--text);
 }
+
+
+.contact .contact-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 1.5rem;
+}
+
+.contact-wrapper .contact-info {
+    flex: 1 0 50%;
+}
+
+.contact-info .contact-item {
+    font-size: 1.6rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.contact-item a{
+    color: var(--text);
+}
+.contact-item a:hover{
+    color: #248bda;
+}
+
+.contact-item i {
+    margin-right: 1rem;
+}
+
+.contact-wrapper .contact-form {
+    flex: 1 0 50%;
+}
+
+.contact-form > form {
+    display: flex;
+    flex-flow: column;
+}
+
+.contact-form > form > input, 
+.contact-form > form > textarea {
+        margin-bottom: 2rem;
+        padding-left: 1.5rem;
+        height: 4rem;
+        width: 100%;
+        caret-color: var(--primary);
+        border-radius: 2rem;
+}
+
+.contact-form > form > textarea {
+    resize: none;
+    height: 10rem;
+    padding-top: 1rem;
+}
+
+.contact-form > form > button {
+    line-height: 100%;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 2rem;
+}
+
+
