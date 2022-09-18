@@ -169,6 +169,7 @@ html {
     margin-right: 1rem;
     box-shadow: 
     0 1px 3px rgb(0 0 0 / 20%);
+    cursor: pointer;
 }
 
 .btn-wrapper .btn:hover ,.btn:hover {
@@ -340,6 +341,7 @@ html {
 
 .portfolio {
     margin-bottom: 15rem;
+    position: relative;
 }
 
 .portfolio .project-wrapper {
@@ -471,4 +473,19 @@ html {
 
 .back-to-top i:hover {
     transform: translateY(-10px);
+}
+
+
+.load-more-wrapper {
+    display: flex;
+    justify-content: center;
+}
+.load-more.btn.disable {
+    color: var(--black);
+    background-color: #9ca6ad;
+}
+
+.load-more.btn.disable:hover {
+    transform: none;
+    cursor: text;
 }

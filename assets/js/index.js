@@ -5,11 +5,117 @@ const $$  = document.querySelectorAll.bind(document)
 const wrapper = $('.wrapper')
 const header = $('.header')
 const navItems = $$('.nav-item')
+const projectWrapper = $('.project-wrapper')
+const btnLoadMore = $('.load-more')
 const btnBackToTop = $('.back-to-top')
 
 
 const app = {
+    quantity: 1,
+    projects: [
+        {
+            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
+            title: 'html super code',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
+            tags: [
+                'html', 'css', 'javascript'
+            ]
+
+        },
+        {
+            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
+            title: 'html super code 2',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
+            tags: [
+                'html', 'css', 'javascript'
+            ]
+
+        },
+        {
+            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
+            title: 'html super code 2',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
+            tags: [
+                'html', 'css', 'javascript'
+            ]
+
+        },
+        {
+            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
+            title: 'html super code 2',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
+            tags: [
+                'html', 'css', 'javascript'
+            ]
+
+        },
+        {
+            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
+            title: 'html super code 2',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
+            tags: [
+                'html', 'css', 'javascript'
+            ]
+
+        },
+        {
+            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
+            title: 'html super code 2',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
+            tags: [
+                'html', 'css', 'javascript'
+            ]
+
+        },
+        {
+            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
+            title: 'html super code 2',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
+            tags: [
+                'html', 'css', 'javascript'
+            ]
+
+        },
+
+
+        
+    ],
+
     
+    renderProject: function() {
+        console.log(this.projects.length)
+        console.log(app.quantity);
+        if (this.projects.length <= 2 ||  app.quantity >= this.projects.length -1  ) {
+            btnLoadMore.classList.add('disable')
+        }
+        
+        const htmls = this.projects.map((project, index) => {
+            if (index > app.quantity) {
+                return
+            }
+            return `<div class="project-item" data-index = "${index}">
+                        <div class="project-image">
+                            <img class="avatar" src="${project.image}" alt="">
+                        </div>
+                        <div class="project-info">
+                            <h3>${project.title}</h3>
+                            <p>${project.description}</p>
+                            <ul class="project-tags">
+                                ${
+                                        project.tags.map((tag, index) => {
+                                            return `<li data-index="${index}">${tag}</li>`
+                                        }).join('')
+                                }
+                            </ul>
+                            <div class="project-links">
+                                <a class="btn" href="#">live</a>
+                                <a class="btn" href="#">source</a>
+                            </div>
+                        </div>
+                    </div>`
+        })
+        projectWrapper.innerHTML = htmls.join('')
+    },
 
     randomBackgroundColor: function() {
         const backgroundColors = [
@@ -28,24 +134,29 @@ const app = {
     handleEvents: function() {
 
         navItems.forEach(navItem => {
-            navItem.onclick = function (e) {
+            navItem.onclick = function() {
                 navItems.forEach(navItem=>navItem.classList.remove('active'))
                 this.classList.add('active')
             }
         })
         
-        document.onscroll = function () {
+        document.onscroll = function() {
             window.scrollY > 530 ? btnBackToTop.style.display = 'block' : btnBackToTop.style.display = 'none'
         }
   
         btnBackToTop.onclick = function() {
             window.scrollTo(0, 0)
-      }
+        }
+        btnLoadMore.onclick = function() {
+            app.quantity += 2
+            app.renderProject()
+        }
     },
 
 
     start: function() {
-        this.randomBackgroundColor()
+        this.renderProject()
+        // this.randomBackgroundColor()
         this.handleEvents()
     }
 }
