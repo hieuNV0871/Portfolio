@@ -5,6 +5,7 @@ const $$  = document.querySelectorAll.bind(document)
 const wrapper = $('.wrapper')
 const header = $('.header')
 const navItems = $$('.nav-item')
+const btnBackToTop = $('.back-to-top')
 
 
 const app = {
@@ -25,12 +26,21 @@ const app = {
     },
 
     handleEvents: function() {
+
         navItems.forEach(navItem => {
             navItem.onclick = function (e) {
                 navItems.forEach(navItem=>navItem.classList.remove('active'))
                 this.classList.add('active')
             }
         })
+        
+        document.onscroll = function () {
+            window.scrollY > 530 ? btnBackToTop.style.display = 'block' : btnBackToTop.style.display = 'none'
+        }
+  
+        btnBackToTop.onclick = function() {
+            window.scrollTo(0, 0)
+      }
     },
 
 
