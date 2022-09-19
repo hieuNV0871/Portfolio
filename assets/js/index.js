@@ -7,7 +7,11 @@ const header = $('.header')
 const navItems = $$('.nav-item')
 const projectWrapper = $('.project-wrapper')
 const btnLoadMore = $('.load-more')
+const themeIcon = $('.theme-icon')
+const darkThemeIcon = $('.dark-theme')
+const lightThemeIcon = $('.light-theme')
 const btnBackToTop = $('.back-to-top')
+
 
 
 const app = {
@@ -151,6 +155,17 @@ const app = {
             app.quantity += 2
             app.renderProject()
         }
+        darkThemeIcon.onclick = function() {
+         document.body.classList.add('dark-mode')
+         this.style.display = "none"
+         lightThemeIcon.style.display = "block"
+        }
+        lightThemeIcon.onclick = function() {
+            document.body.classList.remove('dark-mode')
+            this.style.display ="none"
+            darkThemeIcon.style.display = "block"
+        }
+
     },
 
 
