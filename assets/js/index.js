@@ -4,6 +4,7 @@ const $$  = document.querySelectorAll.bind(document)
 
 const wrapper = $('.wrapper')
 const header = $('.header')
+const menu = $('.menu')
 const navItems = $$('.nav-item')
 const projectWrapper = $('.project-wrapper')
 const btnLoadMore = $('.load-more')
@@ -143,7 +144,16 @@ const app = {
                 this.classList.add('active')
             }
         })
-        
+
+        menu.onclick = function() {
+            header.classList.toggle('toggle')
+        }
+        window.addEventListener('scroll', function() {
+            header.classList.remove('toggle')
+        })
+        window.addEventListener('load', function() {
+            header.classList.remove('toggle')
+        })
         document.onscroll = function() {
             window.scrollY > 530 ? btnBackToTop.style.display = 'block' : btnBackToTop.style.display = 'none'
         }
