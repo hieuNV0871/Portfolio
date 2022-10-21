@@ -20,69 +20,26 @@ const app = {
     projects: [
         {
             image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
+            title: 'mini-music-play',
+            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
+            tags: [
+                'html', 'css', 'javascript'
+            ],
+            liveLink: 'https://hieunv0871.github.io/mini-music-play/',
+            sourceLink: 'https://github.com/hieuNV0871/mini-music-play'
+
+        },
+        {
+            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
             title: 'html super code',
             description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
             tags: [
                 'html', 'css', 'javascript'
-            ]
+            ],
+            liveLink: 'https://hieunv0871.github.io/mini-music-play/',
+            sourceLink: 'https://github.com/hieuNV0871/mini-music-play'
 
-        },
-        {
-            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
-            title: 'html super code 2',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
-            tags: [
-                'html', 'css', 'javascript'
-            ]
-
-        },
-        {
-            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
-            title: 'html super code 2',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
-            tags: [
-                'html', 'css', 'javascript'
-            ]
-
-        },
-        {
-            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
-            title: 'html super code 2',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
-            tags: [
-                'html', 'css', 'javascript'
-            ]
-
-        },
-        {
-            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
-            title: 'html super code 2',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
-            tags: [
-                'html', 'css', 'javascript'
-            ]
-
-        },
-        {
-            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
-            title: 'html super code 2',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
-            tags: [
-                'html', 'css', 'javascript'
-            ]
-
-        },
-        {
-            image: 'https://th.bing.com/th/id/R.fd1c87f587a7caca7b43f52bdc70b852?rik=kU6lmlmA9Savqw&pid=ImgRaw&r=0',
-            title: 'html super code 2',
-            description: 'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt odit voluptas dolore adipisci sint a molestiae delectus voluptates, et quis autem porro placeat illum quasi, tempora maiores, quisquam eligendi laudantium?',
-            tags: [
-                'html', 'css', 'javascript'
-            ]
-
-        },
-
-
+        }
         
     ],
 
@@ -113,8 +70,8 @@ const app = {
                                 }
                             </ul>
                             <div class="project-links">
-                                <a class="btn" href="#">live</a>
-                                <a class="btn" href="#">source</a>
+                                <a class="btn" target = "_blank" href=${project.liveLink}>live</a>
+                                <a class="btn" target = "_blank" href=${project.sourceLink}>source</a>
                             </div>
                         </div>
                     </div>`
